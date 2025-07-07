@@ -75,6 +75,9 @@ def save_event_and_participants():
         participant_df.to_excel(writer, sheet_name='Participant Submissions', index=False)
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
+
     load_excel()
     app.run(debug=True)
 
