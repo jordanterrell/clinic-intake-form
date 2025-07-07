@@ -1,0 +1,49 @@
+
+<script>
+function toggleDemographics(selectObj) {
+    var value = selectObj.value;
+    var demoFields = document.getElementById("demographic-fields");
+    if (value === "yes") {
+        demoFields.style.display = "block";
+    } else {
+        demoFields.style.display = "none";
+    }
+}
+</script>
+
+<!-- Inside the participant form -->
+<form method="POST">
+    <!-- Other participant fields -->
+
+    <label>Provide Demographic Info?
+        <select name="Provide Demographic Info" onchange="toggleDemographics(this)">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </label><br>
+
+    <div id="demographic-fields" style="display: none;">
+        <label>Race/Ethnicity:
+            <select name="Race/Ethnicity">
+                <option>White</option>
+                <option>American Indian/Alaska Native</option>
+                <option>Asian</option>
+                <option>Black/African American</option>
+                <option>Hispanic/Latino</option>
+                <option>Middle Eastern/North African</option>
+                <option>Native Hawaiian or Pacific Islander</option>
+                <option>Other</option>
+            </select>
+        </label><br>
+        <label>Gender:
+            <select name="Gender">
+                <option>Female</option>
+                <option>Male</option>
+                <option>Non-binary</option>
+                <option>Prefer not to say</option>
+            </select>
+        </label><br>
+    </div>
+
+    <!-- Remaining participant fields -->
+</form>
